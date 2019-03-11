@@ -1,0 +1,459 @@
+MATANZA - THE SLOGAN-LACKING GAME
+
+1. What is Matanza?
+2. Who did Matanza?
+3. How can I build and install Matanza?
+4. Running Matanza's server
+5. Playing Matanza
+6. The command line arguments
+7. Plans for the future
+
+--------------------------------------------------------------------------------
+
+1. WHAT IS MATANZA?
+
+   Matanza is a multiplayer game.  In it, every player controls a ship cruising
+   in space, aiming to destroy the other players (and, eventually, ships
+   controled by the computer).
+
+   By the way, it is pronounced MATANGA, not Matanza.
+
+   Currently, the only way to play is through telnet.  That's correct, telnet.
+   Everything is rendered to ASCII art.  Wonderful, isn't it?  You only need to
+   install Matanza in one Machine and you can then play from whatever machines
+   you want, as long as a telnet client is available on them.
+
+   We are currently working to fix that, implementing the Matanza Machine
+   Protocol into the server.  It will allow clients to connect through a
+   different protocol, to display everything using graphics.  We've heard of
+   people interested in creating clients using KDE, OpenGL, Java2D and a few
+   other graphic libraries.  Once they are ready, it will be possible to play
+   using any of the different available clients.
+
+   For the moment, however, the only available option is the telnet client.
+   Don't let that get you down, only very recently we thought about adding
+   other clients, as we are very happy with the currently available.  Just give
+   it a try and see for yourself why other clients are just alternatives, not
+   that important.
+
+   Up until version 0.11, the server only ran on Unix platforms.  This version,
+   however, will probably work on any Unix operating system plus a few others.
+   So far, we have tested it and got it to work in the following systems:
+
+     - BeOS
+     - FreeBSD
+     - GNU/Linux
+     - Solaris
+     - Windows 2000
+     - Windows 98
+     - Windows NT
+
+   The game is free software, distributed under the terms of the GNU GPL
+   License.  Please see the file COPYING for more information.  Yay, you gotta
+   love free software.  :)
+
+   It should be noted that the game should not be considered complete yet, as
+   there are some issues we still have to fix and there are some features still
+   missing.  It should, however, be playable as it is.  It should be very
+   addictive too.  Well, it tries.
+
+   Please check <http://bachue.com/matanza> for more information on new
+   releases.  You don't want to end up running this release for years.  No.
+   You want to be riding the wave, the BLEEDING EDGE.  And you know it.
+
+   Finally, if you are in any way interested in Matanza, I invite you to
+   subscribe to Matanza's mailing list.  There you will find developers
+   interested on listening of your experience with Matanza and any suggestions
+   you might have.  Friendly developers.  We don't bite.  Or not hard.
+
+--------------------------------------------------------------------------------
+
+2. WHO DID MATANZA?
+
+   Matanza is being developed by Alejandro Forero Cuervo
+   <http://bachue.com/alejo> of the Freaks Unidos <http://bachue.com>.
+
+   Information and beta testing for the port to BeOS was provided by Andrés
+   Felipe Arguello <a-arguel@uniandes.edu.co>.
+
+   No other help, other than simple suggestions such as `make it possible to
+   brake!' has been received.
+
+   I know you are going to find out lots of bugs and come up with lots of
+   wonderful ideas to improve the game.  I know you'll also end up wondering
+   how come I am so clueless as to make this and that the way I did.  Well,
+   Luke, you can download CWEB <TODO: Cweb's URL should go here>, run your text
+   editor on matanza.w and make all the changes your self, submitting me
+   patches to receive full credits.  That's right, CREDITS.
+
+--------------------------------------------------------------------------------
+
+3. HOW CAN I BUILD AND INSTALL MATANZA?
+
+   This depends on what your platform is.
+
+   If you are using Windows, you might prefer to obtain the binary
+   distribution.  Otherwise, you will need a C/C++ compiler and you are on your
+   own.  The official binaries are generated using Microsof's Visual Studio.
+   If this is a binary distribution, it is safe to ignore this section.
+
+   To compile and install Matanza in UNIX and BeOS, follow the instructions in
+   the boring INSTALL file (hint: Standard GNU autoconf stuff).
+
+   Matanza needs functionality provided by the following libraries.  If you
+   don't have them installed, Matanza will still compile and run but some of
+   its features will not work.
+
+   libpng:
+   
+       libpng is required if you want Matanza to support PNG images.  This is
+       strongly recommended, as the PNG format is the format used in Matanza
+       Universes.
+       
+       You can obtain libpng at:
+
+           <http://www.libpng.org>
+
+       If this library is found in your system, the `configure' script will
+       tell you that the PNG format will be supported, in a message similar to:
+
+           Supported image formats: PNG.
+
+--------------------------------------------------------------------------------
+
+4. RUNNING MATANZA'S SERVER.
+
+   You must run Matanza's server before anyone can play.  This is as simple as
+   typing `matanza' after it has been successfully built and installed (see
+   previous section).  The Matanza executable accepts some (okay, a lot of)
+   command line arguments, use `matanza --help' to see a list of them.
+
+--------------------------------------------------------------------------------
+
+5. PLAYING MATANZA.
+
+   The first thing you must do is connect to the server.  You must connect to
+   the TCP port `7993' (unless you specified a different port when you ran the
+   server) of the host running the server.  I won't tell you how to do this,
+   Luke.
+   
+   Umm.
+   
+   Don't look at me like that!
+   
+   Ok, you win.  It's probably `telnet localhost 7993'.
+
+   Once connected, you'll see some nice (c'mon give us some credits)
+   introduction.  You must hit <RET> (that's <Enter>) to go to the game's main
+   screen.
+
+   At the main screen, you must enter your name.  That's right, it can't have
+   more than 8 letters.  Oh, and it can not begin with a number.  Enter your
+   name and hit <RET> a few times.
+
+   If you are in Windows' stupid telnet client, the widgets there will look
+   awful.  No colors or anything.  We are going to fix that eventually, but...
+   well, you'll have to learn to live with that for the moment.  I'm sure you
+   can, Luke.  After all, you could stand it when that stupid kid at school
+   used to beat you, remember?
+
+   But back to our game, you'll see a ship in the middle of screen.  Yes, I
+   said ship.  Okay, I know it looks more like fire effects than a ship, but
+   with a couple of practice it's going to look better.  You just need to train
+   your self to recognize it.
+   
+   Or you could think of it as a big moth and of the bullets as moth-spit and
+   the goal of this game would be to cover your enemies in your spit.
+
+   Now, that thing in the middle of the screen is YOUR ship.  To control it you
+   can use the following keys:
+
+   `h' and `l': Make the ship rotate.  If you are wondering why I used `h' and
+       `l', get a life (in other words, learn to use Vi).  It's a matter of
+       style.  Actually, I got so many complaints from lukes like you that I
+       added support for arrow keys.
+
+   `+' and `-': These allow you to zoom in and out.
+
+   `j' and `k': Accelerate the ship.  Yes, it can move!  Yes, at different
+       speeds!  Okay, `j' may not work (see --brake and --fly-back).  More on
+       that latter.  Again, arrows key works as well.
+
+   ` ' (that's space, dude): Shot.  Yay!  Bullets!  Or (depending on your point
+       of view) Moth-Spit!  Sorry, dude, the telnet protocol doesn't support
+       sound so there's no BZZZING when you shot.
+
+   `b': Shot bullets backwards.  Sometimes this doesn't work.  More on that in
+       section 6.
+
+   `m': Do you see two little imperfections on your ship's wings?  Those are
+       the MISSILES.  You can shot them with `m'.  They do a lot more damage
+       than the bullets, but you have only two, so be careful.
+
+   `n': You can also shot SMALLER missiles.  You have ten of these.
+
+   <Ret>: If you hit <Ret>, you'll be able to write a message to send it to all
+       the other players.  That's correct, you can use Matanza as a full
+       featured chat and all.  You could even have net.sex using it, but don't
+       even get me started on the subject.
+
+   `z': Shows you stats about the game.
+
+   `c': Removes the last message from the list of messages.
+
+   `C': Cleans the list of messages.
+
+   `s': Swaps the position of the list of messages.
+ 
+   `p': Pauses the game.
+
+   `v': Toggles whether or not you see the messages.  Sometimes you'll want to
+       disable them.
+
+   `i': Make your ship invisible!  But beware, you may only make it invisible
+       for a short period of time, after that it becomes visible again and you
+       can't become invisible anymore.
+
+   `q': Quit the game.
+
+   Okay, those are all the commands.  For now.
+
+   I know, it's kinda pointless to play alone.  You'll need to turn your
+   computer off, go outside and make some friends first.  Try, it's not that
+   hard.  Umm.  Eventually, Matanza will support computer-controled ships so if
+   you find it way too hard to make some friends to play Matanza with them, you
+   might modify the code and add this.  Don't forget to send me a patch.
+
+   If you look at the border of your screen, you'll notice some characters and
+   perhaps some asterisks and dots and stuff.  Can't see them?  Get some other
+   players in the game.  Still can't see them?  Umm.  Turn your monitor on.
+   There you go.  Yes, those!  (If you still can't see them, see the
+   `--no-radar' option in the next section.)  Each character corresponds to
+   another player in the game.  If you point your ship in the direction of the
+   character (or asterisk), you will reach one of the player's whose name
+   begins with that character.  If the player is too far away, Matanza will
+   draw the character in lowercase.  As it gets closer, it will use uppercase.
+   Now, if you see an asterisk, it means the player is way to close so you must
+   get your weapons ready to give the bastard a lesson.
+
+   Oh, two final words.  Please don't miss your classes playing Matanza as much
+   as we did programming it.  And remember, it's pronounced MATANGA.  Learn how
+   to say it or the gods will punish you.
+
+--------------------------------------------------------------------------------
+
+6. THE COMMAND LINE ARGUMENTS.
+
+   So you think it's very stupid to allow players to shot backwards?  Would you
+   like to increase the number of lives each player has?  How about zooming out
+   and making each ship smaller?  What about making teams and having each
+   player select a given team when joining the game?  Is the world too big or
+   too small?  Do you want to get rid of the asteriods or perhaps add a few
+   more?  Allow the ships to fly faster?  Let them fly backwards?  It is all
+   possible, using command line arguments when you run the server.
+
+   The following is a list of important command line arguments; this was last
+   updated for version 0.12, though some are still missing.
+
+   --help
+      This shows the list of command line arguments and exits.
+
+   --version
+      Use this to know the version of the server.
+
+   --max-players=NUM
+      If you want to make it so the server will allow at most NUM players to
+      enter the world at any given moment, use this option.
+
+   --bold
+      This instructs the server to use bold characters when rendering images to
+      ASCII art.  It improves the quality of the rendering (as of version 0.9
+      it still has some bugs).
+
+   --imgwidth=NUM
+      This changes the default image width (for the zoom).  The default is 320.
+
+   --health=NUM
+      Use this option to set the maximum damage a ship can take before it is
+      destroyed.  It defaults to 1000.
+
+   --mapsize-x=NUM
+   --mapsize-y=NUM
+      These options allow you to change the map size.  If you make it smaller,
+      players will come across each other more often.  On the other hand, if
+      you plan to have a lot of players, you might want to increase the size.
+      The default is 1200 x 1000.
+
+   --lives=NUM
+      With this option you can change the number of lives each player (or team:
+      see --no-share) gets at startup.
+
+   --angles=NUM
+      During its initialization, Matanza calculates rotations for all its
+      images (ships, missiles, asteroids, etc.).  It uses 64 different angles
+      by default.  You may change this number to increase its quality or
+      decrease its memory consumption.
+
+   --no-chat
+      If you use this option, you will disallow the chat feature.  The only
+      reason I can think why someone would want to do that would be to keep
+      newbies from entering the chat buffer and becoming unable to control
+      their ships.  Or perhaps to make some team games more exciting by
+      preventing the players to exchange information (though I know it would be
+      very easy to cheat).
+
+   --team=STR
+      If you want to play in teams mode, you will use this option once for
+      every team, specifing its name.  Before joining the game, all players
+      must select the team they will play in.
+
+   --password[=STR]
+      You can instruct the server to only accept players who know the password.
+      This might be good for some tournaments.
+
+   --teams-safe
+      This option is only meaningful in teams mode.  By default, bullets from a
+      given player hurt everyone, not only players from the other teams.  This
+      option changes that behaviour and makes it so bullets from a given player
+      won't hurt players in the same team.
+
+   --no-share
+      This option is only meaningful in teams mode.  By default, all the teams
+      have a pool of lives; when a player dies, he comes back to play and the
+      team has one life less.  When this option is specified, the lives are no
+      longer shared so each player has its own pool of lives.
+
+   --ang-speed-max=NUM         Maximum angular speed for ships (try 0)
+
+   --fly-back
+      If this option is specified, players will be acelerate backwards.
+
+   --brake
+      Players will be able to brake using `j' (or the down arrow).
+
+   --air
+      Ships' speed depend on their direction.
+
+   --speed-max=NUM
+      Set the maximum speed for the ships to NUM.  A value of 0 makes this
+      unlimited.
+
+   --asteroids=NUM
+      With this option you can specify how many asteroids you want at a given
+      moment.  If you use `0', you will disable this feature and the memory
+      requirements will decrease.
+
+   --limits                    Give the world limits; make it end
+   --no-radar                  When enemy is away, don't show the direction
+   --invisible=NUM             Allow players to become invisible for NUM rounds
+
+   --ppc=NUM
+      PPC stands for Players Per Connection.  With this option, you will be
+      able to set the number of ships each connection will have.  For the
+      moment, the only supported values are 1 and 2.  The keyboard bindings
+      change and those for a value of 2 are not yet documented.
+
+   --bg=PATH
+      PATH should be the path to a JPEG file.  Matanza will load the
+      information in the file and use it as the background, rather than showing
+      the dots.  This will only work if libjpeg was installed when you compiled
+      Matanza.
+
+   --mapsize-img
+      This option will be ignored unless `--bg' is also used.  It tells Matanza
+      to set the map's size to be the width and height of the background image.
+      When used, the options `-x' and `-y' are ignored.
+
+   --ship-img=FILE
+      Through this option you can specify a file name for Matanza to load the
+      images for the ships from it.  The format for the file is very simple,
+      consult ship.txt for more details.
+
+--------------------------------------------------------------------------------
+
+7. PLANS FOR THE FUTURE
+
+   The following is a list of all the changes we would like to implement for
+   future releases:
+
+   Proxies:
+
+      Using telnet as the protocol for Matanza uses a lot of bandwidth.  To
+      solve this problem, we are designing a new protocol, MMP. Once it's
+      ready, we will be able to use proxies for connections.
+
+      For example, lets say Machine A and Machine B are only connected through
+      a slow modem connection.  Player A, the owner of Machine A, runs the
+      Matanza server passing it command line arguments to have it listen on a
+      given port using MMP.  Player B, stuck in Machine B, runs the server
+      telling it to act as a proxy to the world kept in Machine A.  Then both
+      players connect to the servers running on their own machine.
+
+   Termcap:
+
+      We should use termcap rather than have the special control sequences
+      hardcoded.
+
+   Aritificial Intelligence
+
+      Make it possible to have computer-controled ships.
+
+   Colors:
+
+      Every now and then someone comes and suggest using colors.  I am not so
+      sure about it.
+
+      The problems this might have is that for every character you must use
+      only one color while we are drawing exactly four pixels.  This would
+      force us to give the same color to all of those pixels.  I'm not very
+      happy about that.
+
+      But yes, as long as they are disabled by default, having this option
+      can't hurt.
+
+   Collisions:
+
+      When asteroids collide (and when asteroids and players collide), the way
+      their speeds are modified is very silly.  I should get off my lazy ass
+      and come up with another algorithm.
+
+      And also, have something happen when playing in air mode (--air).
+
+   Mods:
+
+      Make it possible to make mods: sets of files that modify the way Matanza
+      behaves.
+
+      It should be possible, for example, to make a mod `Racer', one where the
+      players can't damage each other, they are just set on a given track
+      (crashing against the walls of the track) and their goal is to be the
+      fastest.  Or a mod `RacerDead', a mod like `Racer' where players can
+      shot and kill each other as well.  Or a mod `Labyrinth', where the
+      players are stuck in a labyrinth and must destroy each other.  Or a mod
+      `CaptureTheFlag', where each team is supposed to steal the other team's
+      flag.  Or a mod `DestroyBase', where each team is supposed to destroy the
+      other team's big ship (base).  Or a mod ...
+
+   Multiple Universes:
+
+      Make it possible for one instance of the server to handle many different
+      universes.
+
+   Keyboard Bindings:
+
+      Make it possible to modify the keyboard bindings.  Not globally but
+      per-player.
+
+   Gasoline:
+
+      Given a command-line argument, have the players run out of gas.  There
+      should be some way for them to refill their ships (such as staying over
+      the gas machine).
+
+   Fix bugs with certain telnet clients:
+
+      I -think- the telnet-server code has its bugs (please, please, please
+      report them... I can't fix them if I can't find them).  It won't work
+      with certain telnet clients.  That should be fixed.
+
+--------------------------------------------------------------------------------
